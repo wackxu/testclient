@@ -57,37 +57,7 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
-          <configuration>
-            <archive>
-                <manifest>
-                    <mainClass>xsw.App</mainClass>
-                </manifest>
-            </archive>
-          </configuration>
         </plugin>
-          <plugin>
-              <artifactId>maven-assembly-plugin</artifactId>
-              <version>3.0.0</version>
-              <configuration>
-                  <descriptorRefs>
-                      <descriptorRef>jar-with-dependencies</descriptorRef>
-                  </descriptorRefs>
-                  <archive>
-                      <manifest>
-                          <mainClass>xsw.App</mainClass>
-                      </manifest>
-                  </archive>
-              </configuration>
-              <executions>
-                  <execution>
-                      <id>make-assembly</id> <!-- this is used for inheritance merges -->
-                      <phase>package</phase> <!-- bind to the packaging phase -->
-                      <goals>
-                          <goal>single</goal>
-                      </goals>
-                  </execution>
-              </executions>
-          </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
@@ -105,6 +75,14 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+          <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>exec-maven-plugin</artifactId>
+              <version>1.2.1</version>
+              <configuration>
+                  <mainClass>xsw.Main</mainClass>
+              </configuration>
+          </plugin>
       </plugins>
     </pluginManagement>
   </build>
